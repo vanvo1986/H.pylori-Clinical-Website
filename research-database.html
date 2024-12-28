@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Database - H. pylori Antibiotic Regimen</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="regimens.html">Treatment Regimens</a></li>
+        <li><a href="intervention-tools.html">Intervention Tools</a></li>
+        <li><a href="research-database.html">Research Database</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="research">
+      <h1>H. pylori Research Database</h1>
+
+      <div id="search-filter">
+        <input type="text" id="search" placeholder="Search Research..." oninput="filterResearch()">
+      </div>
+
+      <ul id="research-list">
+        <!-- Research articles will be populated here by JavaScript -->
+      </ul>
+
+      <a href="intervention-tools.html" class="btn">Back to Intervention Tools</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 H. pylori Treatment Guide. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
