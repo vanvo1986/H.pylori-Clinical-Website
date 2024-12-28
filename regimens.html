@@ -1,85 +1,132 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H. pylori Treatment Regimens</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
-header {
-  background-color: #0073e6;
-  padding: 15px;
-  text-align: center;
-}
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="regimens.html">Treatment Regimens</a></li>
+        <li><a href="intervention-tools.html">Intervention Tools</a></li>
+        <li><a href="research-database.html">Research Database</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-header nav ul {
-  list-style: none;
-  padding: 0;
-}
+  <main>
+    <section id="regimens">
+      <h1>H. pylori Treatment Regimens</h1>
+      <p>The first line treatment for Helicobacter pylori (H. pylori) infection depends on several factors, including the patient's history of antibiotic exposure and the local prevalence of antibiotic resistance.</p>
+      
+      <article class="regimen">
+        <h2>First-Line Therapy</h2>
+        <h3>Bisthmuth Quadruple Therapy</h3>
+            <ul>
+              <li>PPI (standard dose) twice daily</li>
+              <li>Bismuth subcitrate (120-300 mg) or subsalicylate (300 mg) four times daily</li>
+              <li>Tetracycline 500 mg four times daily</li>
+              <li>Metronidazole 500 mg three times daily or four times daily</li>
+              <li><strong>Duration:</strong> 10-14 days</li>
+            </ul>
 
-header nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
+        <h3>Concomitant Therapy</h3>
+            <ul>
+              <li>PPI (standard dose) twice daily</li>
+              <li>Clarithromycin 500 mg twice daily</li>
+              <li>Amoxicillin 1g twice daily</li>
+              <li>Nitroimidazole 500 mg twice daily</li>
+              <li><strong>Duration:</strong> 10-14 days</li>
+            </ul>
 
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+        <h3>Rifabutin Triple Therapy</h3>
+            <ul>
+              <li>Omeprazole 40 mg three times daily</li>
+              <li>Amoxicillin 1g three times daily</li>
+              <li>Rifabutin 50 mg three times daily</li>
+              <li><strong>Duration:</strong> 14 days</li>
+            </ul>
 
-main {
-  padding: 20px;
-  background-color: white;
-}
+        <h3>PCAB Dual Therapy</h3>
+            <ul>
+              <li>Vonoprazan 20 mg twice daily</li>
+              <li>Amoxicillin 1 g three times daily</li>
+              <li><strong>Duration:</strong> 14 days</li>
+              <p><i><u>Note: PCAB: potassium-competitive acid blocker</u></i></p>
+            </ul>
 
-section {
-  margin-bottom: 40px;
-}
+        <h3>PCAB Triple Therapy</h3>
+            <ul>
+              <li>Vonoprazan 20 mg twice daily</li>
+              <li>Clarithromycin 500 mg twice daily</li>
+              <li>Amoxicillin 1 g three times daily</li>
+              <li><strong>Duration:</strong> 14 days</li>
+            </ul>
+        <p>This is approved for first-line treatment and independent of clarithromycin resistance testing, but it should be reserved for patientss demonstrated to have clarithromycin-sensitive strains of <em>H.pylori</em>.</p>
 
-footer {
-  background-color: #0073e6;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-}
+        <h3>Clarithromycine Triple Therapy</h3>
+            <ul>
+              <li>PPI (standard dose or double dose) twice daily</li>
+              <li>Clarithromycin 500 mg twice daily</li>
+              <li>Amoxicillin 1g twice daily or Metronidazole 500 mg three time daily</li>
+              <li><strong>Duration:</strong> 14 days</li>
+            </ul>
+        <p>This is an option for first-line therapy in regions where H. pylori clarithromycin resistance is known to be < 15% and in patients with no previous history of macrolide exposure</p>
+      </article>
 
-h1, h2, h3 {
-  color: #333;
-}
+      <article class="regimen">
+      <h2>Alternative Therapy</h2>
+      <h3>Sequential Therapy</h3>
+            <ul>
+              <li>[PPI (standard dose) + Amoxicillin 1 g] twice daily</li>
+              <p><strong>Duration:</strong> 5-7 days, <b>then</b></p>
+              <li>[PPI, Clarithromycin 500 mg, Nitroimidazole 500 mg] twice daily</li>
+              <p><strong>Duration:</strong> 5-7 days</p>
+            </ul>
 
-ul {
-  padding-left: 20px;
-}
+            <h3>Hybrid Therapy</h3>
+            <ul>
+              <li>[PPI (standard dose) + Amoxicillin 1 g] twice daily</li>
+              <p><strong>Duration:</strong> 7 days, <b>then</b></p>
+              <li>[PPI, Amoxicillin, Clarithromycin 500 mg, Nitroimidazole 500 mg] twice daily</li>
+              <p><strong>Duration:</strong> 5-7 days</p>
+            </ul>
 
-ul li {
-  padding-top: 10px;    /* Space above the content */
-  margin-bottom: 10px;
-}
+            <h3>Levofloxacin Triple Therapy</h3>
+            <ul>
+              <li>PPI (standard dose) twice daily</li>
+              <li>Levofloxacin 500 mg once daily</li>
+              <li>Amoxicillin 1g twice daily</li>
+              <li><strong>Duration:</strong> 10-14 days</li>
+            </ul>
+      </article>
 
-a {
-  color: #0073e6;
-  text-decoration: none;
-}
+      <article class="regimen">
+        <h2>Second-Line Therapy</h2>
+        <p>Second-line therapy should not repeat the first-line regimens that have already been used and must include at least one different antibiotic.</p>
+      </article>
 
-a:hover {
-  text-decoration: underline;
-}
+      <article class="regimen">
+      <h2>Rescue or Third-Line Therapy</h2>
+      <p>Prior to starting rescue or third-line therapy, it is important to send an ulcer biopsy specimen for culture and antimicrobial susceptibility testing. Additionally, antimicrobials that have been previously used should be avoided.</p>
+      
 
-.btn {
-  display: inline-block;
-  background-color: #0073e6;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
-}
+      <a href="intervention-tools.html" class="btn">Explore Intervention Tools</a>
 
-.btn:hover {
-  background-color: #005bb5;
-}
+      <a href="index.html" class="btn">Back to Home</a>
+    </section>
+  </main>
 
-.image-container {
-  text-align: center; /* Centers inline elements like images */
-}
+  <footer>
+    <p>&copy; 2024 H. pylori Treatment Guide. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
