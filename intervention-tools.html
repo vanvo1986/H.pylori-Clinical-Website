@@ -120,51 +120,65 @@
     
 <script>
     function selectTreatment() {
-        var age = parseInt(document.getElementById("age").value);
-        var penicillinAllergy = document.getElementById("penicillinAllergy").value;
-        var clarithromycinResistance = document.getElementById("clarithromycinResistance").value;
-        var resultDiv = document.getElementById("treatmentResult");
+    var age = parseInt(document.getElementById("age").value);
+    var penicillinAllergy = document.getElementById("penicillinAllergy").value;
+    var clarithromycinResistance = document.getElementById("clarithromycinResistance").value;
+    var resultDiv = document.getElementById("treatmentResult");
 
-        // Reset result
-        resultDiv.innerHTML = '';
+    // Reset result
+    resultDiv.innerHTML = '';
 
-        if (isNaN(age) || age <= 0) {
-            resultDiv.innerHTML = '<p class="error">Please enter a valid age.</p>';
-            return;
-        }
-
-        // Determine treatment based on age, penicillin allergy, and clarithromycin resistance
-        var treatment = '';
-
-        // Treatment for Penicillin Allergy
-        if (penicillinAllergy === 'yes') {
-            treatment = 'Consider therapies that do not include Amoxicillin or other penicillin derivatives.';
-            treatment += ' Options: Bismuth Quadruple Therapy, PCAB Triple Therapy.';
-        } 
-        // Treatment for Children (<18 years)
-        else if (age < 18) {
-            treatment = 'For children, the following therapies are preferred:';
-            treatment += '<ul><li>Bisthmuth Quadruple Therapy or Sequential Therapy.</li></ul>';
-            treatment += 'Avoid Clarithromycin-based therapies due to resistance concerns.';
-        } 
-        // Treatment for Adults (18-64 years)
-        else if (age >= 18 && age < 65) {
-            treatment = 'For adults, consider the following first-line therapies:';
-            if (clarithromycinResistance === 'low') {
-                treatment += '<ul><li>Concomitant Therapy (Clarithromycin + Amoxicillin + Nitroimidazole).</li></ul>';
-            } else {
-                treatment += '<ul><li>Bisthmuth Quadruple Therapy or Levofloxacin Triple Therapy.</li></ul>';
-            }
-        } 
-        // Treatment for Elderly (65+ years)
-        else if (age >= 65) {
-            treatment = 'For elderly patients, consider therapies with fewer side effects and better tolerability:';
-            treatment += '<ul><li>PCAB Triple Therapy (Vonoprazan + Clarithromycin + Amoxicillin).</li></ul>';
-        }
-
-        // Display the treatment options
-        resultDiv.innerHTML = '<strong>Recommended Treatment:</strong><br>' + treatment;
+    if (isNaN(age) || age <= 0) {
+        resultDiv.innerHTML = '<p class="error">Please enter a valid age.</p>';
+        return;
     }
+
+    // Determine treatment based on age, penicillin allergy, and clarithromycin resistance
+    var treatment = '';
+
+    // Treatment for Penicillin Allergy
+    if (penicillinAllergy === 'yes') {
+        treatment = 'Consider therapies that do not include Amoxicillin or other penicillin derivatives.';
+        treatment += ' Options: Bismuth Quadruple Therapy, PCAB Triple Therapy.';
+    } 
+    // Treatment for Children (<18 years)
+    else if (age < 18) {
+        treatment = 'For children, the following therapies are preferred:';
+        treatment += '<ul><li>Bismuth Quadruple Therapy or Sequential Therapy.</li></ul>';
+        treatment += 'Avoid Clarithromycin-based therapies due to resistance concerns.';
+    } 
+    // Treatment for Adults (18-64 years)
+    else if (age >= 18 && age < 65) {
+        treatment = 'For adults, consider the following first-line therapies:';
+        if (clarithromycinResistance === 'low') {
+            treatment += '<ul><li>Concomitant Therapy (Clarithromycin + Amoxicillin + Nitroimidazole).</li></ul>';
+        } else {
+            treatment += '<ul><li>Bismuth Quadruple Therapy or Levofloxacin Triple Therapy.</li></ul>';
+        }
+    } 
+    // Treatment for Elderly (65+ years) with High Clarithromycin Resistance
+    else if (age >= 65) {
+        treatment = 'For elderly patients, especially those with high clarithromycin resistance, consider the following therapies:';
+
+        if (clarithromycinResistance === 'high') {
+            treatment += '<ul>';
+            treatment += '<li>Bismuth Quadruple Therapy (Bismuth subsalicylate + Tetracycline + Metronidazole + PPI) is often preferred for high resistance areas. It has better efficacy and fewer drug interactions compared to clarithromycin-based regimens.</li>';
+            treatment += '<li>Levofloxacin Triple Therapy (Levofloxacin + Amoxicillin + PPI) is another viable option, especially in areas with high clarithromycin resistance.</li>';
+            treatment += '<li>Consider sequential therapy (PPI + Amoxicillin for 5 days, followed by PPI + Clarithromycin + Metronidazole for 5 days) if the local resistance pattern allows.</li>';
+            treatment += '<li>Note: Adjustments for comorbidities (renal function, polypharmacy) are crucial in elderly patients.</li>';
+            treatment += '</ul>';
+        } else {
+            treatment += '<ul>';
+            treatment += '<li>PCAB Triple Therapy (Vonoprazan + Amoxicillin + Clarithromycin) can be an option, as PCABs may offer better tolerability in elderly patients.</li>';
+            treatment += '<li>Alternatively, Bismuth Quadruple Therapy can still be considered for elderly patients with mild comorbidities.</li>';
+            treatment += '</ul>';
+        }
+    }
+
+    // Display the treatment options
+    resultDiv.innerHTML = '<strong>Recommended Treatment:</strong><br>' + treatment;
+}
+
 </script>
 
 </body>
